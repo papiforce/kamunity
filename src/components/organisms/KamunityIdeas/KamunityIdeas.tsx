@@ -100,7 +100,7 @@ const KamunityIdeas: React.FC = () => {
               color="green"
               textAlign="center"
               style={{
-                marginBottom: isMobileDisplay ? spacing.three : spacing.seven,
+                marginBottom: spacing.four,
               }}
             >
               Notre Vision
