@@ -82,8 +82,8 @@ const Navbar: React.FC = () => {
       slot: "/blog",
     },
     {
-      label: "Projet plateforme",
-      slot: "/projet-plateforme",
+      label: "Projet",
+      slot: "/projet",
     },
     {
       label: "Contact & dons",

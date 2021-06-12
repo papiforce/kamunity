@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { theme } from "core/Theme";
 import { lessThan } from "utils/mediaQueries";
+import { useInnerWidth } from "utils";
 
 import Text from "components/atoms/Text";
 import FlipCard from "components/molecules/FlipCard";
@@ -12,11 +13,11 @@ import ImageDay from "assets/image_day.png";
 import Plateform from "assets/plateform.jpg";
 import Kamagora from "assets/kamagora.jpg";
 
-const { spacing } = theme;
+const { spacing, screens } = theme;
 
 const Container = styled.div`
   ${({ theme: { spacing } }) => `
-    padding: ${spacing.six} ${spacing.three};
+    padding: ${spacing.eight} ${spacing.three};
   `}
 `;
 
@@ -82,6 +83,11 @@ const PlayerDescription = styled(Text)`
 `;
 
 const KamunityActions: React.FC = () => {
+  const innerWidth = useInnerWidth();
+
+  const isTabletDisplay = innerWidth <= screens.tablet;
+  const isMobileDisplay = innerWidth <= screens.mobile;
+
   const data = [
     {
       title: "Nos débats",
@@ -116,7 +122,7 @@ const KamunityActions: React.FC = () => {
   return (
     <Container>
       <Text
-        fontSize="title2"
+        fontSize={isTabletDisplay ? "title5" : "title2"}
         fontWeight="medium"
         color="green"
         textAlign="center"
@@ -136,7 +142,7 @@ const KamunityActions: React.FC = () => {
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         />
         <PlayerDescriptionWrapper>
           <Text
@@ -149,7 +155,7 @@ const KamunityActions: React.FC = () => {
             Kamunity présente Kamtextile
           </Text>
           <PlayerDescription
-            fontSize="large"
+            fontSize={isMobileDisplay ? "medium" : "large"}
             fontWeight="medium"
             color="grey"
             lineHeight="28px"

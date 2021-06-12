@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 const CenterSubWrapper = styled.div`
   ${({ theme: { colors, spacing } }) => `
     background: ${colors.white};
-    padding: ${spacing.five} 0px;
+    padding: ${spacing.eight} 0px;
   `}
 `;
 
@@ -107,7 +107,7 @@ const KamunityIdeas: React.FC = () => {
             </Text>
             <Description
               fontSize={isMobileDisplay ? "medium" : "large"}
-              fontWeight="light"
+              fontWeight="medium"
               textAlign="center"
               color="grey"
               lineHeight="30px"

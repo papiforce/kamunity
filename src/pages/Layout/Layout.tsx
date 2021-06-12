@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Navbar from "components/atoms/Navbar";
+import Footer from "components/organisms/Footer";
 
 const Container = styled.div`
   ${({ theme: { colors } }) => `
@@ -37,7 +38,10 @@ const Layout: React.FC = ({ children }) => {
   return (
     <Container>
       <Navbar />
-      <Content>{children}</Content>
+      <Content>
+        {children}
+        <Footer />
+      </Content>
     </Container>
   );
 };
