@@ -41,27 +41,38 @@ const MemberItem = styled.div<{ isReverse: boolean }>`
     flex-direction: ${isReverse ? "row-reverse" : "row"};
   `}
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 `;
 
 const MemberPhoto = styled.img<{ position: string }>`
-  ${({ position, theme: { borderRadius } }) => `
+  ${({ position, theme: { borderRadius, spacing } }) => `
     object-position: ${position};
     border-radius: ${borderRadius.round};
+    ${lessThan("smallDesktop")(`
+      margin-bottom: ${spacing.four};
+    `)}
   `}
+  ${lessThan("mobile")(`
+    width: 100%;
+  `)}
   width: 700px;
   height: 400px;
   object-fit: cover;
 `;
 
 const MemberDescription = styled.div`
+  ${lessThan("smallDesktop")(`
+    max-width: 100%;
+  `)}
   max-width: 475px;
 `;
 
 const KamunityKamarades: React.FC = () => {
   const innerWidth = useInnerWidth();
 
+  const isSmallDesktopDisplay = innerWidth <= screens.smallDesktop;
   const isTabletDisplay = innerWidth <= screens.tablet;
   const isMobileDisplay = innerWidth <= screens.mobile;
 
@@ -119,7 +130,9 @@ const KamunityKamarades: React.FC = () => {
             color="grey"
             textAlign="center"
             lineHeight="28px"
-            style={{ maxWidth: "650px" }}
+            style={{
+              maxWidth: isSmallDesktopDisplay ? "100%" : "650px",
+            }}
           >
             C'est ainsi que nous nous nommons au sein de Kamunity. Jeunes,
             dynamiques et engagés dans nos projets personnels et professionnels,
@@ -146,7 +159,13 @@ const KamunityKamarades: React.FC = () => {
                 <Text
                   fontSize="small"
                   fontWeight="regular"
-                  textAlign={index % 2 !== 0 ? "right" : "left"}
+                  textAlign={
+                    isSmallDesktopDisplay
+                      ? "center"
+                      : index % 2 !== 0
+                      ? "right"
+                      : "left"
+                  }
                   style={{ marginBottom: spacing.one }}
                 >
                   {member.job}
@@ -155,7 +174,13 @@ const KamunityKamarades: React.FC = () => {
                   fontSize="display1"
                   fontWeight="medium"
                   color="green"
-                  textAlign={index % 2 !== 0 ? "right" : "left"}
+                  textAlign={
+                    isSmallDesktopDisplay
+                      ? "center"
+                      : index % 2 !== 0
+                      ? "right"
+                      : "left"
+                  }
                   style={{ marginBottom: spacing.two }}
                 >
                   {member.name}
@@ -165,7 +190,13 @@ const KamunityKamarades: React.FC = () => {
                   fontWeight="medium"
                   color="grey"
                   lineHeight="24px"
-                  textAlign={index % 2 !== 0 ? "right" : "left"}
+                  textAlign={
+                    isSmallDesktopDisplay
+                      ? "center"
+                      : index % 2 !== 0
+                      ? "right"
+                      : "left"
+                  }
                 >
                   {member.description}
                 </Text>
