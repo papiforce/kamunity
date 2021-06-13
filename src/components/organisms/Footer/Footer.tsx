@@ -84,7 +84,6 @@ const TextLink = styled(Text)`
 const Footer: React.FC = () => {
   const innerWidth = useInnerWidth();
 
-  const isTabletDisplay = innerWidth <= screens.tablet;
   const isMobileDisplay = innerWidth <= screens.mobile;
 
   const SocialItems = [
@@ -205,13 +204,13 @@ const Footer: React.FC = () => {
                 }}
                 onClick={() => window.open(item.slot, "_blank")}
               >
-                <FooterIcon className={item.icon} />
                 <TextLink
                   fontSize={isMobileDisplay ? "medium" : "large"}
                   fontWeight="regular"
                   color="grey"
                   lineHeight="22px"
                 >
+                  <FooterIcon className={item.icon} />
                   {item.label}
                 </TextLink>
               </FooterSubItemLink>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 import { theme } from "core/Theme";
 import { lessThan } from "utils/mediaQueries";
@@ -69,8 +70,20 @@ const MemberDescription = styled.div`
   max-width: 475px;
 `;
 
+const ButtonLink = styled(Text)`
+  ${({ theme: { spacing, colors, borderRadius } }) => `
+    padding: ${spacing.three} ${spacing.four};
+    background: ${colors.green};
+    margin: ${spacing.eight} auto 0 auto;
+    border-radius: ${borderRadius.small};
+  `}
+  width: fit-content;
+  cursor: pointer;
+`;
+
 const KamunityKamarades: React.FC = () => {
   const innerWidth = useInnerWidth();
+  const history = useHistory();
 
   const isSmallDesktopDisplay = innerWidth <= screens.smallDesktop;
   const isTabletDisplay = innerWidth <= screens.tablet;
@@ -204,6 +217,14 @@ const KamunityKamarades: React.FC = () => {
             </MemberItem>
           );
         })}
+        <ButtonLink
+          fontSize="large"
+          fontWeight="medium"
+          color="white"
+          onClick={() => history.push("/kamarades")}
+        >
+          Voir les autres Kamarades
+        </ButtonLink>
       </Wrapper>
     </Container>
   );

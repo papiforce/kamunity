@@ -17,9 +17,8 @@ const Wrapper = styled.div`
   ${lessThan("mobile")(`
     height: 248px;
   `)}
-  background: url(${HomePageImage});
+  background: url(${HomePageImage}) center center;
   background-size: cover;
-  background-position: center;
   height: 550px;
   display: flex;
   align-items: center;

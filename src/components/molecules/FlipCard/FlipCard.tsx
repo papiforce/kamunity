@@ -33,10 +33,9 @@ const Wrapper = styled.div`
 const CardFront = styled.div<{ img: string }>`
   ${({ theme: { borderRadius }, img }) => `
     border-radius: ${borderRadius.round};
-    background: url(${img});
+    background: url(${img}) center center;
   `}
   background-size: cover;
-  background-position: center;
   position: absolute;
   width: 100%;
   height: 100%;

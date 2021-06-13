@@ -6,6 +6,7 @@ import { theme } from "core/Theme";
 
 import Layout from "pages/Layout";
 import HomePage from "pages/HomePage";
+import KamaradesPage from "pages/KamaradesPage";
 
 function App() {
   return (
@@ -18,6 +19,16 @@ function App() {
             component={() => (
               <Layout>
                 <HomePage />
+              </Layout>
+            )}
+          />
+
+          <Route
+            exact
+            path="/kamarades"
+            component={() => (
+              <Layout>
+                <KamaradesPage />
               </Layout>
             )}
           />
