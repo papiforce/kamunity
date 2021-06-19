@@ -7,6 +7,7 @@ import { theme } from "core/Theme";
 import Layout from "pages/Layout";
 import HomePage from "pages/HomePage";
 import KamaradesPage from "pages/KamaradesPage";
+import ContactPage from "pages/ContactPage";
 
 function App() {
   return (
@@ -29,6 +30,16 @@ function App() {
             component={() => (
               <Layout>
                 <KamaradesPage />
+              </Layout>
+            )}
+          />
+
+          <Route
+            exact
+            path="/contact-et-dons"
+            component={() => (
+              <Layout>
+                <ContactPage />
               </Layout>
             )}
           />

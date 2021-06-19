@@ -148,7 +148,7 @@ const KamaradesPage: React.FC = () => {
           textAlign="center"
           style={{
             width: "635px",
-            padding: isTabletDisplay ? `0px ${spacing.three}` : 0,
+            margin: isTabletDisplay ? `0px ${spacing.three}` : 0,
             background: "rgba(24, 18, 1, 0.7)",
           }}
         >
@@ -233,7 +233,7 @@ const KamaradesPage: React.FC = () => {
           fontSize="large"
           fontWeight="medium"
           color="white"
-          onClick={() => history.push("/kamarades")}
+          onClick={() => history.push("/contact-et-dons")}
         >
           Rejoins-nous Kamarades
         </ButtonLink>

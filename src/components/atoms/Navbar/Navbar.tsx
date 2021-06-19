@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
@@ -90,6 +90,20 @@ const Navbar: React.FC = () => {
       slot: "/contact-et-dons",
     },
   ];
+
+  useEffect(() => {
+    if (url === "/") {
+      setActive(0);
+    } else if (url === "/actualites") {
+      setActive(1);
+    } else if (url === "/blog") {
+      setActive(2);
+    } else if (url === "/projet") {
+      setActive(3);
+    } else if (url === "/contact-et-dons") {
+      setActive(4);
+    }
+  }, [url]);
 
   return (
     <Container isOpen={isOpen}>
