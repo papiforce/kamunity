@@ -8,6 +8,7 @@ import Layout from "pages/Layout";
 import HomePage from "pages/HomePage";
 import KamaradesPage from "pages/KamaradesPage";
 import ContactPage from "pages/ContactPage";
+import NewsPage from "pages/NewsPage";
 
 function App() {
   return (
@@ -20,6 +21,16 @@ function App() {
             component={() => (
               <Layout>
                 <HomePage />
+              </Layout>
+            )}
+          />
+
+          <Route
+            exact
+            path="/actualites"
+            component={() => (
+              <Layout>
+                <NewsPage />
               </Layout>
             )}
           />

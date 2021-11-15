@@ -177,7 +177,7 @@ const ContactPage: React.FC = () => {
             style={{ marginTop: spacing.four }}
             onClick={() =>
               window.open(
-                "https://www.paypal.com/donate?token=w9hfZGXEvhQM24Hfy7UPj3HeoBONaUjsWXPGG6w3BR7zddwOtRckGv-C1GUXkO4ZJZQnLxK6iM0PGCXI",
+                "https://www.paypal.com/donate?token=f18URryEOHGqeyUOjwLWu_r2jyBtalnY-NmlSTijTi-vaqOviDg3oMy4l2u9PAEfpIGwpqlMFtwHCkEb",
                 "__blank"
               )
             }
