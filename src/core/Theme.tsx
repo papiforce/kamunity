@@ -3,6 +3,7 @@ const white: string = "#ffffff";
 const grey: string = "#808080";
 const black: string = "#000000";
 const green: string = "#4d7728";
+const blue: string = "#1a4f71";
 
 export const theme = {
   screens: {
@@ -20,6 +21,7 @@ export const theme = {
     grey: grey,
     black: black,
     green: green,
+    blue: blue,
   },
   spacing: {
     zero: "4px",

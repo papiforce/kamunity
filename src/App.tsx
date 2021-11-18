@@ -9,6 +9,7 @@ import HomePage from "pages/HomePage";
 import KamaradesPage from "pages/KamaradesPage";
 import ContactPage from "pages/ContactPage";
 import NewsPage from "pages/NewsPage";
+import ProjectPage from "pages/ProjectPage";
 
 function App() {
   return (
@@ -31,6 +32,16 @@ function App() {
             component={() => (
               <Layout>
                 <NewsPage />
+              </Layout>
+            )}
+          />
+
+          <Route
+            exact
+            path="/projet"
+            component={() => (
+              <Layout>
+                <ProjectPage />
               </Layout>
             )}
           />

@@ -181,7 +181,6 @@ const NewsPage: React.FC = () => {
           height="480"
           src="https://www.youtube.com/embed/6_rbfEOzAO4"
           title="Youtube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
@@ -200,33 +199,32 @@ const NewsPage: React.FC = () => {
           africaines"
         </Text>
       </VideoWrapper>
-      <VideoWrapper
-        style={{ background: colors.white, padding: `${spacing.five} 0` }}
-      >
-        <Text
-          fontSize="title5"
-          fontWeight="regular"
-          color="green"
-          textAlign="center"
-          style={{
-            maxWidth: 480,
-            padding: isTabletDisplay ? `0px ${spacing.three}` : 0,
-          }}
-        >
-          Live Instagram: "Comment préparer les mutations économiques après le
-          Covid-19? "
-        </Text>
-        <Player
-          width="800"
-          height="480"
-          src="https://www.youtube.com/embed/JD--rDdNHvw"
-          title="Youtube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ marginBottom: isTabletDisplay ? spacing.three : 0 }}
-        />
-      </VideoWrapper>
+      <div style={{ background: colors.white, padding: `${spacing.two} 0` }}>
+        <VideoWrapper>
+          <Text
+            fontSize="title5"
+            fontWeight="regular"
+            color="green"
+            textAlign="center"
+            style={{
+              maxWidth: 480,
+              padding: isTabletDisplay ? `0px ${spacing.three}` : 0,
+            }}
+          >
+            Live Instagram: "Comment préparer les mutations économiques après le
+            Covid-19? "
+          </Text>
+          <Player
+            width="800"
+            height="480"
+            src="https://www.youtube.com/embed/JD--rDdNHvw"
+            title="Youtube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ marginBottom: isTabletDisplay ? spacing.three : 0 }}
+          />
+        </VideoWrapper>
+      </div>
       <ButtonLink
         fontSize="large"
         fontWeight="medium"

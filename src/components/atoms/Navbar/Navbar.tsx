@@ -6,6 +6,8 @@ import { theme } from "core/Theme";
 import { useInnerWidth } from "utils";
 
 import LogoKm from "assets/logo-kamunity.png";
+import MenuSVG from "assets/menu-sharp.svg";
+import CloseSVG from "assets/close-sharp.svg";
 import NavbarItem from "./NavbarItem";
 
 const { screens, spacing } = theme;
@@ -13,7 +15,7 @@ const { screens, spacing } = theme;
 const Container = styled.div<{ isOpen: boolean }>`
   ${({ theme: { colors }, isOpen }) => `
     background: ${colors.white};
-    height: ${isOpen ? "290px" : "66px"};
+    height: ${isOpen ? "250px" : "66px"};
   `}
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -44,15 +46,6 @@ const RightSide = styled.div`
   display: flex;
 `;
 
-const MenuIcon = styled.i`
-  ${({ theme: { colors, spacing, borderRadius } }) => `
-    color: ${colors.black};
-    border: 2px solid ${colors.black};
-    padding: ${spacing.one};
-    border-radius: ${borderRadius.extraSmall};
-  `}
-`;
-
 const MobileMenu = styled.div`
   ${({ theme: { spacing } }) => `
     margin: ${spacing.one} 0px;
@@ -78,10 +71,6 @@ const Navbar: React.FC = () => {
       slot: "/actualites",
     },
     {
-      label: "Blog",
-      slot: "/blog",
-    },
-    {
       label: "Projet",
       slot: "/projet",
     },
@@ -96,12 +85,10 @@ const Navbar: React.FC = () => {
       setActive(0);
     } else if (url === "/actualites") {
       setActive(1);
-    } else if (url === "/blog") {
-      setActive(2);
     } else if (url === "/projet") {
-      setActive(3);
+      setActive(2);
     } else if (url === "/contact-et-dons") {
-      setActive(4);
+      setActive(3);
     }
   }, [url]);
 
@@ -133,8 +120,10 @@ const Navbar: React.FC = () => {
               );
             })}
           {innerWidth <= screens.mobile && (
-            <MenuIcon
-              className="fas fa-bars"
+            <img
+              src={isOpen ? CloseSVG : MenuSVG}
+              width="40px"
+              alt="menu"
               onClick={() => setIsOpen((isOpen) => !isOpen)}
             />
           )}
